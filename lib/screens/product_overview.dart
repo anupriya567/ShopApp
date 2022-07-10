@@ -33,21 +33,20 @@ class _ProductOverviewState extends State<ProductOverview> {
         title: Text('ShopApp'),
         actions: [
           Consumer<Cart>(
-          builder: (key,cartitems,child) =>
-             Badge(
+            builder: (key, cartitems, child) => Badge(
               badgeColor: Colors.orange,
               toAnimate: true,
-              position: BadgePosition.topEnd(top: 4,end: 2),
+              position: BadgePosition.topEnd(top: 4, end: 2),
               borderRadius: BorderRadius.circular(6),
               badgeContent: Text(cartitems.clength.toString()),
               child: IconButton(
-                onPressed: (){
+                onPressed: () {
                   Navigator.pushNamed(context, '/cart_screen');
                 },
-                icon: Icon(Icons.shopping_cart,
+                icon: Icon(
+                  Icons.shopping_cart,
                 ),
               ),
-
             ),
           ),
           PopupMenuButton(

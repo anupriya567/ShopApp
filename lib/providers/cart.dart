@@ -56,11 +56,9 @@ class Cart with ChangeNotifier {
 
   void removeProduct(String id) {
 
-    print(_items[id]!.quantity);
     if (_items[id] != null) {
       if (_items[id]!.quantity == 1) {
         _items.remove(id);
-        notifyListeners();
       }
       else {
         _items.update(
@@ -71,10 +69,9 @@ class Cart with ChangeNotifier {
                 quantity: existingCartItem.quantity - 1,
                 price: existingCartItem.price)
         );
-        notifyListeners();
       }
+      notifyListeners();
     }
-
     print("deleted");
   }
 

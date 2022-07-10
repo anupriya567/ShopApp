@@ -10,7 +10,12 @@ class CartListTile extends StatelessWidget {
   final String id;
   final String prodid;
 
-  CartListTile({required this.title, required this.quantity, required this.price, required this.id,required this.prodid});
+  CartListTile(
+      {required this.title,
+      required this.quantity,
+      required this.price,
+      required this.id,
+      required this.prodid});
 
   @override
   Widget build(BuildContext context) {
@@ -31,10 +36,31 @@ class CartListTile extends StatelessWidget {
         ),
       ),
       direction: DismissDirection.endToStart,
-      onDismissed: (direction)
-      {
+      onDismissed: (direction) {
         print(prodid);
-        Provider.of<Cart>(context,listen: false).removeProduct(prodid);
+        Provider.of<Cart>(context, listen: false).removeProduct(prodid);
+      },
+      confirmDismiss: (direction) {
+        return showDialog(
+            context: context,
+            builder: (context) => AlertDialog(
+                  title: Text("Are you sure?"),
+                  content: Text("Do you want to remove an item from cart?"),
+                  actions: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(context).pop(true);
+                      },
+                      child: Text("Yes"),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(context).pop(false);
+                      },
+                      child: Text("No"),
+                    ),
+                  ],
+                ));
       },
       child: Card(
         margin: EdgeInsets.symmetric(

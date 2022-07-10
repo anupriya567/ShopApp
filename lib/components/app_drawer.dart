@@ -9,7 +9,7 @@ class AppDrawer extends StatelessWidget {
       child: Column(
         children: [
           AppBar(
-            title: Text('Hello Guys'),
+            title: Text('Hye Sweetie!!'),
             // automaticallyImplyLeading: false,
           ),
           Divider(),
@@ -31,8 +31,18 @@ class AppDrawer extends StatelessWidget {
               Navigator.of(context).pushReplacementNamed('/orders_screen');
             },
           ),
+          Divider(),
+          ListTile(
+            leading: Icon(Icons.edit, size: 30),
+            title: Text('Manage Products',style: TextStyle(
+                fontSize: 20)),
+            onTap: (){
+              Navigator.of(context).pushReplacementNamed('/userproduct_screen');
+            },
+          ),
         ],
       ),
     );
   }
 }
+
