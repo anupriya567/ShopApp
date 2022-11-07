@@ -1,5 +1,7 @@
 # ShopApp
  [Code](https://github.com/anupriya567/ShopApp).
+ * Implemented basic functionalities of e-commerce shopping app
+ 
 ### Home Screen
 > All items are listed here (it's having limited no. of items)
 
