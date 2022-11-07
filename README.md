@@ -1,6 +1,5 @@
 # ShopApp
-Code
-This site was built using [GitHub Pages](https://pages.github.com/).
+ [Code](https://github.com/anupriya567/ShopApp).
 ### Home Screen
 > All items are listed here (it's having limited no. of items)
 
